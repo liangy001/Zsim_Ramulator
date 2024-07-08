@@ -1,0 +1,16 @@
+Pin 2.14 kit 71293
+A:  pin/source/include/pin/gen/exception.PH: GetFaultyAccessAddress: 242: assertion failed: IsAccessFault()
+A: pin/source/include/pin/gen/exception.PH: GetFaultyAccessAddress: 242: assertion failed: IsAccessFault()
+
+
+################################################################################
+## STACK TRACE
+################################################################################
+addr2line -C -f -e "/home/yue/Zsim-DRAMsim3/build/opt/libzsim.so" 0x7ffff6289289 0x7ffff628a076 0x7ffff628a350 0x7ffff62287b1 0x7ffff63324f1 0x3043a9454 0x3043aa1f4 0x304438c88 0x30446603c 0x7ffff6108e07 0x7ffff6227745 0x7ffff631839b 0x7ffff631a0c4 0x3042f71f1 0x3042f96d9 0x30431e56d 0x304319ee2 0x30438cef8 0x3043c0a70 0x3043c4b07 0x30432df2b 0x304317874 0x3042f95db 0x304380868
+Pin 2.14
+Copyright (c) 2003-2015, Intel Corporation. All rights reserved.
+@CHARM-VERSION: $Rev: 71293 $
+@CHARM-BUILDER: BUILDER
+@CHARM-COMPILER: gcc 4.4.7
+@CHARM-TARGET: ia32e
+@CHARM-CFLAGS:  __OPTIMIZE__=1  __NO_INLINE__=__NO_INLINE__

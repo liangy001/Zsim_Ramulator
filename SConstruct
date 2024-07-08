@@ -150,6 +150,10 @@ def buildSim(cppFlags, dir, type, pgo=None):
 
     env["CPPPATH"] += ["."]
 
+    # Ramulator
+    env["CPPFLAGS"] += " -DRAMULATOR=1"
+    env["CPPFLAGS"] += " -D_WITH_RAMULATOR_=1 "
+
     # HDF5
 #    env["PINLIBS"] += '-L/usr/lib/x86_64-linux-gnu/hdf5/serial/'
     env["PINLIBS"] += ["hdf5", "hdf5_hl"]
@@ -175,7 +179,7 @@ def buildSim(cppFlags, dir, type, pgo=None):
     env.SConscript("src/SConscript", variant_dir=buildDir, exports= {'env' : env.Clone()})
 
 ####
-
+AddOption('--dbg', action='append_const', dest='cflags', const='-g')
 AddOption('--buildDir', dest='buildDir', type='string', default="build/", nargs=1, action='store', metavar='DIR', help='Base build directory')
 AddOption('--d', dest='debugBuild', default=False, action='store_true', help='Do a debug build')
 AddOption('--o', dest='optBuild', default=False, action='store_true', help='Do an opt build (optimized, with assertions and symbols)')
